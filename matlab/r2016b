@@ -1,0 +1,24 @@
+#%Module1.0
+##
+## Matlab modulefile
+##
+proc ModulesHelp { } {
+	        global version
+
+				        puts stderr "\tThis loads the Matlab environment."
+						        puts stderr "\tVersion $version/$package"
+}
+
+module-whatis   "Load Matlab environment"
+module-whatis   "Version: Matlab r2016b"
+module-whatis   "Modifies: PATH"
+
+
+# for Tcl script use only
+set     version         "R2016b"
+
+set     matlab_root     "/home/opt/Matlab/$version"
+# License
+
+prepend-path PATH "$matlab_root/bin/"
+

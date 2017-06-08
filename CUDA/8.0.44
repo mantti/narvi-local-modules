@@ -1,0 +1,27 @@
+#%Module
+proc ModulesHelp { } {
+    puts stderr { CUDA (formerly Compute Unified Device Architecture) is a parallel
+ computing platform and programming model created by NVIDIA and implemented by the
+ graphics processing units (GPUs) that they produce. CUDA gives developers access
+ to the virtual instruction set and memory of the parallel computational elements in CUDA GPUs. - Homepage: https://developer.nvidia.com/cuda-toolkit
+    }
+}
+
+module-whatis {Description: CUDA (formerly Compute Unified Device Architecture) is a parallel
+ computing platform and programming model created by NVIDIA and implemented by the
+ graphics processing units (GPUs) that they produce. CUDA gives developers access
+ to the virtual instruction set and memory of the parallel computational elements in CUDA GPUs. - Homepage: https://developer.nvidia.com/cuda-toolkit}
+
+set root /home/opt/cuda-8.0
+
+conflict CUDA
+
+prepend-path	CPATH		$root/include
+prepend-path	CUDA_HOME		$root
+prepend-path	CUDA_PATH		$root
+prepend-path	LD_LIBRARY_PATH		$root/lib64
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib64
+prepend-path	PATH		$root/bin
+
+#prepend-path	PATH		$root

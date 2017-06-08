@@ -1,2 +1,2 @@
-# narvi-local-modules
-Some environment-modules for local cluster
+# Narvi-local-modules
+Some local environment-modules for narvi

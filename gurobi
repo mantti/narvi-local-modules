@@ -1,0 +1,25 @@
+#%Module1.0
+##
+## Matlab modulefile
+##
+proc ModulesHelp { } {
+  global version
+
+  puts stderr "\tThis loads the Gurobi optimizer environment."
+       puts stderr "\tVersion $version/$package"
+}
+
+module-whatis   "Load Gurobi optimizer environment"
+module-whatis   "Version: Gurobi 7.02"
+module-whatis   "Modifies: PATH"
+
+
+# for Tcl script use only
+set     version         "702"
+
+set     gurobi_root     "/home/opt/gurobi/$version/linux64"
+# License
+
+prepend-path PATH "$gurobi_root/bin"
+setenv GRB_LICENSE_FILE "/home/opt/gurobi702/gurobi_client.lic"
+
